@@ -802,3 +802,107 @@ linear-gradient(#000 0 0);
 pointer-events:none;
 
 }
+
+/* ===== PREMIUM EFFECTS ===== */
+
+.space-bg{
+position:fixed;
+inset:0;
+z-index:-10;
+background:
+radial-gradient(circle at 75% 20%,rgba(120,70,255,.25),transparent 35%),
+radial-gradient(circle at 15% 30%,rgba(70,120,255,.15),transparent 30%),
+linear-gradient(180deg,#050312,#0a0820,#100c2d);
+}
+
+.space-bg::before{
+content:"";
+position:absolute;
+inset:0;
+background-image:
+radial-gradient(#ffffff 1px,transparent 1px),
+radial-gradient(#ffffff 1px,transparent 1px);
+background-size:60px 60px,120px 120px;
+background-position:0 0,30px 40px;
+opacity:.28;
+animation:starsMove 90s linear infinite;
+}
+
+@keyframes starsMove{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-800px);
+}
+
+}
+
+.moon{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.moon::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+border-radius:50%;
+
+background:
+radial-gradient(circle at 35% 30%,
+rgba(255,255,255,.95),
+rgba(236,228,255,.8) 45%,
+rgba(170,120,255,.55) 75%,
+rgba(120,70,255,.15) 100%);
+
+}
+
+.moon::after{
+
+content:"";
+
+position:absolute;
+
+width:120%;
+
+height:120%;
+
+left:-10%;
+
+top:-10%;
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 60px rgba(170,120,255,.6),
+0 0 120px rgba(130,80,255,.4),
+0 0 180px rgba(90,60,255,.25);
+
+animation:pulse 5s ease-in-out infinite;
+
+}
+
+@keyframes pulse{
+
+0%,100%{
+opacity:.8;
+transform:scale(1);
+}
+
+50%{
+opacity:1;
+transform:scale(1.06);
+}
+
+}
