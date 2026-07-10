@@ -1,20 +1,32 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded",()=>{
 
-    const cards = document.querySelectorAll(".card");
+const cards=document.querySelectorAll(".card");
 
-    cards.forEach((card, index) => {
+const observer=new IntersectionObserver(entries=>{
 
-        card.style.opacity = "0";
-        card.style.transform = "translateY(40px)";
+entries.forEach(entry=>{
 
-        setTimeout(() => {
+if(entry.isIntersecting){
 
-            card.style.transition = "0.8s ease";
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
+entry.target.style.opacity="1";
+entry.target.style.transform="translateY(0)";
 
-        }, 300 + index * 250);
+}
 
-    });
+});
+
+});
+
+cards.forEach(card=>{
+
+card.style.opacity="0";
+
+card.style.transform="translateY(60px)";
+
+card.style.transition="all .8s ease";
+
+observer.observe(card);
+
+});
 
 });
