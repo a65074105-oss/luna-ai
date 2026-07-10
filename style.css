@@ -113,21 +113,15 @@ body{
 /* ---------- HERO ---------- */
 
 .hero{
-
-    width:min(1280px,92%);
-
+    width:min(1300px,92%);
     margin:auto;
-
+    min-height:90vh;
     display:grid;
-
-    grid-template-columns:1fr 1fr;
-
+    grid-template-columns:1.1fr .9fr;
     align-items:center;
-
-    gap:40px;
-
-    min-height:78vh;
-
+    gap:30px;
+    position:relative;
+    padding:40px 0 80px;
 }
 
 .welcome{
@@ -566,9 +560,8 @@ padding-top:30px;
 }
 
 .hero-content{
-
-order:2;
-
+    max-width:620px;
+    z-index:2;
 }
 
 .moon{
@@ -676,6 +669,54 @@ width:100%;
 width:220px;
 
 height:220px;
+
+}
+
+}
+
+/* ===== ПЕРЕОПРЕДЕЛЕНИЕ ЛУНЫ ===== */
+
+.hero{
+    position:relative;
+}
+
+.moon{
+    position:absolute !important;
+    right:-120px !important;
+    top:20px !important;
+
+    width:560px !important;
+    height:560px !important;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle at 30% 30%,
+    #fff,
+    #efe8ff 35%,
+    #d5c1ff 60%,
+    #a77dff 80%,
+    #6b49df);
+
+    box-shadow:
+    0 0 80px rgba(170,120,255,.9),
+    0 0 180px rgba(120,80,255,.5);
+
+    z-index:1;
+}
+
+@media (max-width:768px){
+
+.moon{
+
+position:relative !important;
+
+right:auto !important;
+top:auto !important;
+
+width:250px !important;
+height:250px !important;
+
+margin:0 auto 40px;
 
 }
 
